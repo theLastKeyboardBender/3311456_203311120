@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'imp/page.dart';
+import 'src/page.dart';
 import 'giris/giris.dart';
 import 'resimler.dart';
 import 'istatistikler.dart';
