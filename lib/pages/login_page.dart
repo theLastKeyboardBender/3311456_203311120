@@ -33,7 +33,9 @@ class _PageGirisState extends State<PageGiris> {
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   constraints: BoxConstraints(maxWidth: 300),
-                  hintText: "adinizi giriniz",
+                  hintText: "name surname",
+                  labelText: "identity",
+                  icon: Icon(Icons.perm_identity,color: Colors.black)
                 )),
             const SizedBox(height: 5),
             ElevatedButton(

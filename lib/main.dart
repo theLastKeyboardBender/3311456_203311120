@@ -1,43 +1,47 @@
 import 'package:flutter/material.dart';
-import 'src/page.dart';
-import 'giris/giris.dart';
-import 'resimler.dart';
-import 'istatistikler.dart';
+import 'pages/input_page.dart';
+import 'pages/login_page.dart';
+import 'pages/pictures_page.dart';
+import 'pages/statistics_page.dart';
 //import 'imp/my_data_type.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
-    );
+    return MaterialApp(
+      home: Top(),
+      title: "My Super App",
+      theme: ThemeData(
+        primaryColor: Colors.cyan[100]
+      )
+      );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Top extends StatefulWidget {
+  const Top({super.key});
 
   @override
   State<StatefulWidget> createState() {
-    return _HomePageState();
+    return _TopState();
   }
 }
 
 //Anasayfa
-class _HomePageState extends State<HomePage> {
+class _TopState extends State<Top> {
   String titleText = "";
   bool girildiMi = false;
   int _currentPage = 0;
 
-  final List<Widget?> _widgetList = const <Widget>[
+  final List<Widget?> _pages = const <Widget>[
     ResimlerPage(),
-    AppBody(pageIndex: 1),
+    AppBody(),
     StatisticsPage(),
   ];
 
@@ -45,15 +49,15 @@ class _HomePageState extends State<HomePage> {
       const <BottomNavigationBarItem>[
     BottomNavigationBarItem(
       icon: Icon(Icons.photo_library),
-      label: "resimler",
+      label: "receipts",
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.edit),
-      label: "bilgi giris",
+      label: "entry",
     ),
     BottomNavigationBarItem(
       icon: Icon(Icons.timeline),
-      label: "istatistikler",
+      label: "statistics",
     ),
   ];
 
@@ -85,7 +89,7 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: Colors.amber[700],
           title: Text("hosgeldin $titleText"),
         ),
-        body: _widgetList[_currentPage],
+        body: _pages[_currentPage],
         bottomNavigationBar: BottomNavigationBar(
           items: _bottomNavItem,
           onTap: navigationFunction,

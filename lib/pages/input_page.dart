@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 class AppBody extends StatelessWidget {
   const AppBody({
     super.key,
-    required this.pageIndex,
   });
 
-  final int pageIndex;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +29,7 @@ class AppBody extends StatelessWidget {
               children: [
                 Container(
                   color: Colors.amber,
-                  child: Text("$pageIndex"),
+                  child: const Text("naber"),
                 ),
               ],
             ),

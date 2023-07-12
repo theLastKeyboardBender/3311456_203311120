@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 //import 'imp/my_data_type.dart';
 
 class ResimlerPage extends StatefulWidget {
-
-  const ResimlerPage({super.key,/*this.listOfReceipts*/});
+  const ResimlerPage({
+    super.key,
+    /*this.listOfReceipts*/
+  });
 
   //final List<Receipt> listOfReceipts;
   @override
@@ -13,11 +15,8 @@ class ResimlerPage extends StatefulWidget {
 }
 
 class ResimlerPageState extends State<ResimlerPage> {
-  
-
   @override
   Widget build(BuildContext context) {
-
     /*List<Image> myReceipts;
     int length;
 
@@ -38,10 +37,14 @@ class ResimlerPageState extends State<ResimlerPage> {
     return Container(
       margin: const EdgeInsets.all(5),
       padding: const EdgeInsets.all(5),
-      child: GridView.count(crossAxisCount: 3,children: [
-        Image.asset('lib/receipts/receipt1.jpg',),
-      ],),
+      child: GridView.count(
+        crossAxisCount: 3,
+        children: [
+          Image.asset(
+            'lib/receipts/receipt1.jpg',
+          ),
+        ],
+      ),
     );
   }
-  
 }

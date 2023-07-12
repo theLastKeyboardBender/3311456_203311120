@@ -40,8 +40,8 @@ class ListRow extends StatelessWidget {
         ),
         height: 100,
         padding: const EdgeInsets.all(2),
-        child: Row(
-          children: const [Text("data")],
+        child: const Row(
+          children: [Text("data")],
         ),
       ),
     );
