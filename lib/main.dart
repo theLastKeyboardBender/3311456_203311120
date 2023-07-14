@@ -3,9 +3,12 @@ import 'pages/input_page.dart';
 import 'pages/login_page.dart';
 import 'pages/pictures_page.dart';
 import 'pages/statistics_page.dart';
-//import 'imp/my_data_type.dart';
+import 'src/my_data_types.dart';
+import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -15,12 +18,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Top(),
-      title: "My Super App",
-      theme: ThemeData(
-        primaryColor: Colors.cyan[100]
-      )
-      );
+        home: const Top(),
+        title: "My Super App",
+        theme: ThemeData(primaryColor: Colors.cyan[100]));
   }
 }
 
@@ -39,10 +39,11 @@ class _TopState extends State<Top> {
   bool girildiMi = false;
   int _currentPage = 0;
 
-  final List<Widget?> _pages = const <Widget>[
-    ResimlerPage(),
-    AppBody(),
-    StatisticsPage(),
+
+  final List<Widget?> _pages =  <Widget>[
+    const PicturesPage(),
+    InputPage(),
+    const StatisticsPage(),
   ];
 
   final List<BottomNavigationBarItem> _bottomNavItem =
@@ -61,8 +62,7 @@ class _TopState extends State<Top> {
     ),
   ];
 
-  //List<Receipt> currentReceips;
-
+  List<Receipt>? currentReceips;
 
   void navigationFunction(int page) {
     setState(() {
