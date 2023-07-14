@@ -4,8 +4,6 @@ import 'pages/login_page.dart';
 import 'pages/pictures_page.dart';
 import 'pages/statistics_page.dart';
 import 'src/my_data_types.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -42,7 +40,7 @@ class _TopState extends State<Top> {
 
   final List<Widget?> _pages =  <Widget>[
     const PicturesPage(),
-    InputPage(),
+    const InputPage(),
     const StatisticsPage(),
   ];
 

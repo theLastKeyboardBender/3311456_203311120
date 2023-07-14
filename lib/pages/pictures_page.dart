@@ -2,9 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/src/my_data_types.dart';
-import 'package:sqflite/sqflite.dart';
 import '../src/db_util.dart';
-import 'dart:async';
 
 class PicturesPage extends StatefulWidget {
   const PicturesPage({

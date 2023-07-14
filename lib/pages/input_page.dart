@@ -4,7 +4,7 @@ import '../src/my_data_types.dart';
 import "package:image_picker/image_picker.dart";
 
 class InputPage extends StatefulWidget {
-  InputPage({
+  const InputPage({
     super.key,
   });
 
